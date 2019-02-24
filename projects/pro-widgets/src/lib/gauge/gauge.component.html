@@ -102,8 +102,8 @@
 	<line fill="none" [attr.stroke]="pointerColor" stroke-width="3" stroke-miterlimit="10" x1="141.73" y1="141.73" [attr.x2]="coordinates[0]" [attr.y2]="coordinates[1]"/>
 	<circle [attr.fill]="pointerColor" cx="141.732" cy="141.731" r="7.086"/>
 	<text transform="matrix(1 0 0 1 142 224.333)" fill="#0A0B14" font-family="'Roboto-Regular', 'Arial'" font-size="21" text-anchor="middle">{{roundedValue}}</text>
-	<text transform="matrix(1 0 0 1 60.334 194.334)" fill="#B2B2B1" font-family="'Roboto-Regular', 'Arial'" font-size="21">{{min}}</text>
-	<text transform="matrix(1 0 0 1 184.1016 194.334)" fill="#B2B2B1" font-family="'Roboto-Regular', 'Arial'" font-size="21">{{max}}</text>
-	<text transform="matrix(1 0 0 1 174.667 224.333)" fill="#9B9B9A" font-family="'Roboto-Regular', 'Arial'" font-size="21" font-size="13">{{unit}}</text>
+	<text transform="matrix(1 0 0 1 60.334 194.334)" [attr.fill]="fontColor" font-family="'Roboto-Regular', 'Arial'" font-size="21">{{min}}</text>
+	<text transform="matrix(1 0 0 1 184.1016 194.334)" [attr.fill]="fontColor" font-family="'Roboto-Regular', 'Arial'" font-size="21">{{max}}</text>
+	<text transform="matrix(1 0 0 1 174.667 224.333)" [attr.fill]="fontColor" font-family="'Roboto-Regular', 'Arial'" font-size="21" font-size="13">{{unit}}</text>
 </g>
 </svg>

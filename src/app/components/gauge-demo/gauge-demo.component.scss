@@ -1,4 +1,4 @@
-@import 'src/theme.scss';
+// @import 'src/theme.scss';
 
 :host {
   display: block;
@@ -32,10 +32,4 @@ pro-gauge {
 mat-form-field, mat-tab-group {
   width: 100%;
   max-width: 300px;
-}
-
-.dark-theme {
-  @include angular-material-theme($theme);
-  color: mat-contrast($primary, default);
-  background-color: mat-color($primary, default);
 }

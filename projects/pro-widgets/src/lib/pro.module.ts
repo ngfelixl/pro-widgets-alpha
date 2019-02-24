@@ -1,17 +1,13 @@
 import { NgModule } from '@angular/core';
-import { AnalogStickComponent } from './analog-stick/analog-stick.component';
-import { GaugeComponent } from './gauge/gauge.component';
+import { AnalogStickModule } from './analog-stick/analog-stick.module';
+import { GaugeModule } from './gauge/gauge.module';
 
 @NgModule({
-  declarations: [
-    AnalogStickComponent,
-    GaugeComponent
-  ],
   imports: [
   ],
   exports: [
-    AnalogStickComponent,
-    GaugeComponent
+    AnalogStickModule,
+    GaugeModule
   ]
 })
 export class ProModule { }

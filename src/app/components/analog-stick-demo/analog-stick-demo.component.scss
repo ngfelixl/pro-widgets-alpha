@@ -1,4 +1,4 @@
-@import '~@angular/material/theming';
+@import 'src/theme.scss';
 
 :host {
   display: block;
@@ -11,10 +11,12 @@ pro-analog-stick {
 }
 
 .flex {
-  margin: auto;
-  display: grid;
+  display: flex;
+  flex-wrap: wrap;
   grid-template-columns: 1.5fr 1fr;
   grid-gap: 16px;
+  width: 100%;
+  justify-content: space-between;
 }
 
 .input-data {
@@ -22,7 +24,6 @@ pro-analog-stick {
   display: block;
   padding: 8px;
   box-sizing: border-box;
-  background-color: #121212;
   color: white;
   border-radius: 4px;
   overflow: auto;
@@ -35,4 +36,8 @@ pro-analog-stick {
 mat-form-field, mat-tab-group {
   width: 100%;
   max-width: 300px;
+}
+
+.dark-theme {
+  background-color: mat-color($primary, 700);
 }

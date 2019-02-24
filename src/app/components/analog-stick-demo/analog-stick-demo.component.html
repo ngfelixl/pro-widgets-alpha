@@ -11,41 +11,41 @@
     [value]="value$ | async">
   </pro-analog-stick>
   <div class="container">
-    <div class="input-data mat-elevation-z1">
-      <b>Speedometer input bindings</b><br>
+    <div class="input-data mat-elevation-z1 dark-theme">
+      <b>Analog stick input bindings</b><br>
       value: {{value$ | async | json}}<br><br>
-      <mat-form-field>
+      <mat-form-field color="accent">
         <mat-select placeholder="Theme" [value]="styles[0]" (selectionChange)="usePreset($event.value)">
           <mat-option *ngFor="let style of styles" [value]="style">{{style.name}}</mat-option>
         </mat-select>
       </mat-form-field>
 
       <form [formGroup]="form">
-        <mat-tab-group mat-stretch-tabs>
+        <mat-tab-group mat-stretch-tabs color="accent">
           <mat-tab label="Colors">
-            <mat-form-field>
+            <mat-form-field color="accent">
               <input matInput placeholder="color" formControlName="color" autocomplete="off">
             </mat-form-field>
-            <mat-form-field>
+            <mat-form-field color="accent">
               <input matInput placeholder="gradientBaseColor" formControlName="gradientBaseColor" autocomplete="off">
             </mat-form-field>
-            <mat-form-field>
+            <mat-form-field color="accent">
               <input matInput placeholder="sideColor" formControlName="sideColor" autocomplete="off">
             </mat-form-field>
           </mat-tab>
           <mat-tab label="Gradient Color">
-            <mat-form-field>
+            <mat-form-field color="accent">
               <input matInput placeholder="gradientStartColor" formControlName="gradientStartColor" autocomplete="off">
             </mat-form-field>
-            <mat-form-field>
+            <mat-form-field color="accent">
               <input matInput placeholder="gradientEndColor" formControlName="gradientEndColor" autocomplete="off">
             </mat-form-field>
           </mat-tab>
           <mat-tab label="Labels and Units">
-            <mat-form-field>
+            <mat-form-field color="accent">
               <input matInput placeholder="xLabel" formControlName="xLabel" autocomplete="off">
             </mat-form-field>
-            <mat-form-field>
+            <mat-form-field color="accent">
               <input matInput placeholder="yLabel" formControlName="yLabel" autocomplete="off">
             </mat-form-field>
           </mat-tab>

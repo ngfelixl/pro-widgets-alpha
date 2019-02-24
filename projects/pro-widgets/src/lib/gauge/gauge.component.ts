@@ -14,6 +14,7 @@ export class GaugeComponent implements OnChanges, OnDestroy {
   @Input() unit = '';
   @Input() color = '#474747';
   @Input() backgroundColor = '#0A0B14';
+  @Input() fontColor = 'rgb(178,178,177)';
   @Input() pointerLength = 130;
   @Input() pointerColor = '#E52420';
   @Input() stripeColor = 'white';

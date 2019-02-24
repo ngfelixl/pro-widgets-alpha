@@ -19,6 +19,7 @@ export class GaugeDemoComponent implements OnInit {
       max: new FormControl(styles[0].max),
       unit: new FormControl(styles[0].unit),
       color: new FormControl(styles[0].color),
+      fontColor: new FormControl(styles[0].fontColor),
       pointerColor: new FormControl(styles[0].pointerColor),
       pointerLength: new FormControl(styles[0].pointerLength),
       stripeColor: new FormControl(styles[0].stripeColor),
