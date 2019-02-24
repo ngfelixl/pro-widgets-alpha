@@ -1,5 +1,8 @@
 <mat-sidenav-container class="container">
-  <mat-sidenav mode="side" opened class="sidenav">
+  <mat-sidenav
+    [mode]="sidenavMode | async"
+    [opened]="(sidenavOpen | async) || (disableClose | async)"
+    class="sidenav">
     <app-nav-list></app-nav-list>
   </mat-sidenav>
 

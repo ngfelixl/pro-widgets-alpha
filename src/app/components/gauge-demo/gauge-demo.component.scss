@@ -8,13 +8,12 @@
 
 pro-gauge {
   max-width: 300px;
+  margin-bottom: 16px;
 }
 
 .flex {
   display: flex;
   flex-wrap: wrap;
-  grid-template-columns: 1.5fr 1fr;
-  grid-gap: 16px;
   width: 100%;
   justify-content: space-between;
 }
@@ -26,10 +25,10 @@ pro-gauge {
   box-sizing: border-box;
   color: white;
   border-radius: 4px;
-  overflow: auto;
+  max-width: 300px;
+  min-width: 200px;
 }
 
 mat-form-field, mat-tab-group {
   width: 100%;
-  max-width: 300px;
 }

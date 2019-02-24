@@ -1,8 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ActivatedRoute, ActivatedRouteSnapshot } from '@angular/router';
-import { Observable, Subscription } from 'rxjs';
-import { map, tap } from 'rxjs/operators';
+import { Subscription } from 'rxjs';
 import { TitleService } from './services/title.service';
+import { LayoutService } from './services/layout.service';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
@@ -14,10 +14,21 @@ export class AppComponent implements OnInit, OnDestroy {
   subtitle: string;
   subscription: Subscription;
 
-  constructor(private titleService: TitleService) { }
+  constructor(
+    private titleService: TitleService,
+    private layoutService: LayoutService
+  ) { }
 
   ngOnInit() {
     this.subscription = this.titleService.title$.subscribe(title => this.subtitle = title);
+  }
+
+  get displayIcon() {
+    return this.layoutService.sidenavMode$;
+  }
+
+  openSidenav() {
+    this.layoutService.openSidenav();
   }
 
   ngOnDestroy() {

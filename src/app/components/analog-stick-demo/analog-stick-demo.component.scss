@@ -8,6 +8,7 @@
 
 pro-analog-stick {
   max-width: 300px;
+  margin-bottom: 16px;
 }
 
 .flex {
@@ -26,7 +27,7 @@ pro-analog-stick {
   box-sizing: border-box;
   color: white;
   border-radius: 4px;
-  overflow: auto;
+  max-width: 300px;
 }
 
 .code {
