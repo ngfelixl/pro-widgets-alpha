@@ -1,0 +1,40 @@
+@import 'src/theme.scss';
+
+.jumbotron {
+  text-align: center;
+  padding: 96px 0;
+  box-sizing: border-box;
+  background-color: mat-color($accent, A400);
+  position: relative;
+  font-weight: bold;
+  color: mat-color($primary, 900);
+
+  button {
+    margin-top: 32px;
+    padding: 16px 32px;
+    border-radius: 8px;
+    font-size: 1.4em;
+  }
+}
+
+.title {
+  font-size: 3em;
+  font-weight: 'thin';
+}
+
+.preview {
+  max-width: 1080px;
+  margin: 48px auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 0px;
+}
+
+.demo {
+  margin: 32px 20%;
+}
+
+.description {
+  margin: 32px 20%;
+  font-size: 1.6em;
+}

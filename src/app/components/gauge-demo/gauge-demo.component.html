@@ -1,0 +1,80 @@
+<h3>Gauge</h3>
+<div class="flex">
+  <pro-gauge
+    [min]="style.min"
+    [max]="style.max"
+    [unit]="style.unit"
+    [color]="style.color"
+    [backgroundColor]="style.backgroundColor"
+    [pointerColor]="style.pointerColor"
+    [pointerLength]="style.pointerLength"
+    [stripeColor]="style.stripeColor"
+    [value]="value$ | async">
+  </pro-gauge>
+  <div class="container">
+    <div class="input-data mat-elevation-z1 dark-theme">
+      <b>Gauge input bindings</b><br>
+      value: {{value$ | async | json}}<br><br>
+      <mat-form-field>
+        <mat-select placeholder="Theme" [value]="styles[0]" (selectionChange)="usePreset($event.value)">
+          <mat-option *ngFor="let style of styles" [value]="style">{{style.name}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <form [formGroup]="form">
+        <mat-tab-group mat-stretch-tabs>
+          <mat-tab label="Colors">
+            <mat-form-field>
+              <input matInput placeholder="color" autocomplete="off" formControlName="color">
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput placeholder="backgroundColor" autocomplete="off" formControlName="backgroundColor">
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput placeholder="stripeColor" autocomplete="off" formControlName="stripeColor">
+            </mat-form-field>
+          </mat-tab>
+          <mat-tab label="Labels and Units">
+            <mat-form-field>
+              <input matInput placeholder="min" autocomplete="off" formControlName="min">
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput placeholder="max" autocomplete="off" formControlName="max">
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput placeholder="unit" autocomplete="off" formControlName="unit">
+            </mat-form-field>
+          </mat-tab>
+          <mat-tab label="Pointer">
+            <mat-form-field>
+              <input matInput placeholder="pointerColor" autocomplete="off" formControlName="pointerColor">
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput placeholder="pointerLength" autocomplete="off" formControlName="pointerLength">
+            </mat-form-field>
+          </mat-tab>
+        </mat-tab-group>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div>
+  <h4>Import</h4>
+  <pre class="code mat-elevation-z1">import &#123; GaugeModule &#125; from 'pro-widgets'</pre>
+</div>
+
+<div>
+  <h4>Code</h4>
+  <pre class="code mat-elevation-z1">
+&lt;pro-gauge
+  min="{{style.min}}"
+  max="{{style.max}}
+  unit="{{style.unit}}"
+  color="{{style.color}}"
+  backgroundColor="{{style.backgroundColor}}"
+  stripeColor="{{style.stripeColor}}"
+  pointerColor="{{style.pointerColor}}"
+  pointerLength="{{style.pointerLength}}"&gt;
+&lt;/pro-gauge&gt;</pre>
+</div>

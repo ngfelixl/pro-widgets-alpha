@@ -1,0 +1,41 @@
+@import 'src/theme.scss';
+
+:host {
+  display: block;
+  max-width: 1080px;
+  margin: auto;
+}
+
+pro-gauge {
+  max-width: 300px;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  grid-template-columns: 1.5fr 1fr;
+  grid-gap: 16px;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.input-data {
+  width: 100%;
+  display: block;
+  padding: 8px;
+  box-sizing: border-box;
+  color: white;
+  border-radius: 4px;
+  overflow: auto;
+}
+
+mat-form-field, mat-tab-group {
+  width: 100%;
+  max-width: 300px;
+}
+
+.dark-theme {
+  @include angular-material-theme($theme);
+  color: mat-contrast($primary, default);
+  background-color: mat-color($primary, default);
+}

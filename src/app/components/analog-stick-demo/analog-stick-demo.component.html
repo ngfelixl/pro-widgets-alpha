@@ -1,0 +1,75 @@
+<h3>Analog Stick</h3>
+<div class="flex">
+  <pro-analog-stick
+    [xLabel]="style.xLabel"
+    [yLabel]="style.yLabel"
+    [color]="style.color"
+    [gradientStartColor]="style.gradientStartColor"
+    [gradientEndColor]="style.gradientEndColor"
+    [gradientBaseColor]="style.gradientBaseColor"
+    [sideColor]="style.sideColor"
+    [value]="value$ | async">
+  </pro-analog-stick>
+  <div class="container">
+    <div class="input-data mat-elevation-z1">
+      <b>Speedometer input bindings</b><br>
+      value: {{value$ | async | json}}<br><br>
+      <mat-form-field>
+        <mat-select placeholder="Theme" [value]="styles[0]" (selectionChange)="usePreset($event.value)">
+          <mat-option *ngFor="let style of styles" [value]="style">{{style.name}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <form [formGroup]="form">
+        <mat-tab-group mat-stretch-tabs>
+          <mat-tab label="Colors">
+            <mat-form-field>
+              <input matInput placeholder="color" formControlName="color" autocomplete="off">
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput placeholder="gradientBaseColor" formControlName="gradientBaseColor" autocomplete="off">
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput placeholder="sideColor" formControlName="sideColor" autocomplete="off">
+            </mat-form-field>
+          </mat-tab>
+          <mat-tab label="Gradient Color">
+            <mat-form-field>
+              <input matInput placeholder="gradientStartColor" formControlName="gradientStartColor" autocomplete="off">
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput placeholder="gradientEndColor" formControlName="gradientEndColor" autocomplete="off">
+            </mat-form-field>
+          </mat-tab>
+          <mat-tab label="Labels and Units">
+            <mat-form-field>
+              <input matInput placeholder="xLabel" formControlName="xLabel" autocomplete="off">
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput placeholder="yLabel" formControlName="yLabel" autocomplete="off">
+            </mat-form-field>
+          </mat-tab>
+        </mat-tab-group>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div>
+  <h4>Import</h4>
+  <pre class="code mat-elevation-z1">import &#123; AnalogStickModule &#125; from 'pro-widgets'</pre>
+</div>
+
+<div>
+  <h4>Code</h4>
+  <pre class="code mat-elevation-z1">
+&lt;pro-analog-stick
+  xLabel="{{style.xLabel}}"
+  yLabel="{{style.yLabel}}
+  color="{{style.color}}"
+  gradientBaseColor="{{style.gradientBaseColor}}"
+  sideColor="{{style.sideColor}}"
+  gradientStartColor="{{style.gradientStartColor}}"
+  gradientEndColor="{{style.gradientEndColor}}"&gt;
+&lt;/pro-analog-stick&gt;</pre>
+</div>
