@@ -26,17 +26,31 @@
   max-width: 1080px;
   margin: 48px auto;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
   grid-gap: 0px;
 }
 
+
+.entry {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.second.entry {
+  flex-wrap: wrap-reverse;
+}
 .demo {
-  margin: 32px 20%;
+  flex: 1 1 150px;
+  margin: 16px 32px;
+  max-width: 350px;
 }
 
 .description {
-  margin: 32px 20%;
-  font-size: 1.6em;
+  flex: 1 1 150px;
+  font-size: 1.4em;
+  margin: 16px 32px;
+  max-width: 450px;
 }
 
 a {

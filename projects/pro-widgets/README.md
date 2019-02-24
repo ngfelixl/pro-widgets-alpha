@@ -1,24 +1,42 @@
-# ProWidgets
+# Angular Pro Widgets
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.0.
+See the [documentation](https://ngfelixl.github.io/pro-widgets)
 
-## Code scaffolding
+<img src="../../img/demo.PNG" alt="Widgets" width="400px">
 
-Run `ng generate component component-name --project pro-widgets` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project pro-widgets`.
-> Note: Don't forget to add `--project pro-widgets` or else it will be added to the default project in your `angular.json` file. 
+## Installation 
 
-## Build
+```
+npm install pro-widgets
+```
 
-Run `ng build pro-widgets` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Import the module and use
 
-## Publishing
+```typescript
+import { ProModule } from 'pro-widgets';
 
-After building your library with `ng build pro-widgets`, go to the dist folder `cd dist/pro-widgets` and run `npm publish`.
+@NgModule({
+  import: [ ProModule ]
+})
+export class AppModule {}
+```
 
-## Running unit tests
+Use the widget in your component template by
 
-Run `ng test pro-widgets` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```html
+<pro-gauge [value]="stream$ | async"></pro-gauge>
+<pro-analog-stick></pro-analog-stick>
+```
 
-## Further help
+## Get in touch
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+[![twitter](https://img.shields.io/badge/twitter-%40ngfelixl-blue.svg?logo=twitter)](https://twitter.com/intent/follow?screen_name=ngfelixl)
+[![github](https://img.shields.io/badge/github-%40ngfelixl-blue.svg?logo=github)](https://github.com/ngfelixl)
+
+Hi, I am Felix,
+Software developer and Angular, NgRX contributor
+
+![avatar](https://avatars2.githubusercontent.com/u/24190530?s=200&v=4)
+
+If you like this library, think about giving it a star or follow me on twitter or github or check out my personal
+the [website](https://felixlemke.com).
