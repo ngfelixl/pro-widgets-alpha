@@ -10,6 +10,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   background-color: mat-color($primary, 700);
   font-family: monospace;
   color: white;
+  overflow-y: auto;
 }
 
 a {
