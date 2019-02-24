@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { ProModule } from '../../projects/widgets/src/public_api';
+import { ProModule } from '../../projects/pro-widgets/src/public_api';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';

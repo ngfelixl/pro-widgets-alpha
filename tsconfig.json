@@ -24,6 +24,18 @@
       ],
       "widgets/*": [
         "dist/widgets/*"
+      ],
+      "pro-widget": [
+        "dist/pro-widget"
+      ],
+      "pro-widget/*": [
+        "dist/pro-widget/*"
+      ],
+      "pro-widgets": [
+        "dist/pro-widgets"
+      ],
+      "pro-widgets/*": [
+        "dist/pro-widgets/*"
       ]
     }
   }
