@@ -35,10 +35,7 @@
               <input matInput placeholder="defaultColor" autocomplete="off" formControlName="defaultColor">
             </mat-form-field>
             <mat-form-field color="accent">
-              <input matInput placeholder="warnColor" autocomplete="off" formControlName="warnColor">
-            </mat-form-field>
-            <mat-form-field color="accent">
-              <input matInput placeholder="dangerColor" autocomplete="off" formControlName="dangerColor">
+              <input matInput placeholder="normalColor" autocomplete="off" formControlName="normalColor">
             </mat-form-field>
             <mat-form-field color="accent">
               <input matInput placeholder="backgroundColor" autocomplete="off" formControlName="backgroundColor">
@@ -47,7 +44,21 @@
               <input matInput placeholder="outerBackgroundColor" autocomplete="off" formControlName="outerBackgroundColor">
             </mat-form-field>
           </mat-tab>
-          <mat-tab label="Font and thresholds">
+          <mat-tab label="Thresholds">
+            <mat-form-field color="accent">
+              <input matInput placeholder="warnThreshold" autocomplete="off" formControlName="warnThreshold">
+            </mat-form-field>
+            <mat-form-field color="accent">
+              <input matInput placeholder="warnColor" autocomplete="off" formControlName="warnColor">
+            </mat-form-field>
+            <mat-form-field color="accent">
+              <input matInput placeholder="dangerThreshold" autocomplete="off" formControlName="dangerThreshold">
+            </mat-form-field>
+            <mat-form-field color="accent">
+              <input matInput placeholder="dangerColor" autocomplete="off" formControlName="dangerColor">
+            </mat-form-field>
+          </mat-tab>
+          <mat-tab label="Font">
             <mat-form-field color="accent">
               <input matInput placeholder="fontColor" autocomplete="off" formControlName="fontColor">
             </mat-form-field>
@@ -56,12 +67,6 @@
             </mat-form-field>
             <mat-form-field color="accent">
               <input matInput placeholder="underlineColor" autocomplete="off" formControlName="underlineColor">
-            </mat-form-field>
-            <mat-form-field color="accent">
-              <input matInput placeholder="warnThreshold" autocomplete="off" formControlName="warnThreshold">
-            </mat-form-field>
-            <mat-form-field color="accent">
-              <input matInput placeholder="dangerThreshold" autocomplete="off" formControlName="dangerThreshold">
             </mat-form-field>
           </mat-tab>
           <mat-tab label="Labels and Units">
