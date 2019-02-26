@@ -1,4 +1,5 @@
 import { Component, Input, OnChanges, AfterViewInit, ViewChild, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'pro-digital-gauge',
@@ -9,12 +10,14 @@ import { Component, Input, OnChanges, AfterViewInit, ViewChild, OnInit, ChangeDe
 export class DigitalGaugeComponent implements OnInit, OnChanges, AfterViewInit {
   @Input() value = 0;
   @Input() backgroundColor = '#424242';
+  @Input() outerBackgroundColor = this.backgroundColor;
   @Input() defaultColor = 'white';
   @Input() normalColor = 'red';
   @Input() warnColor = 'red';
   @Input() dangerColor = 'red';
   @Input() fontColor = '#d0d0d0';
   @Input() unitColor = '#a0a0a0';
+  @Input() underlineColor = this.fontColor;
   @Input() strokeWidth = 2;
   @Input() min = 0;
   @Input() max = 100;
@@ -31,6 +34,8 @@ export class DigitalGaugeComponent implements OnInit, OnChanges, AfterViewInit {
     danger: number;
   };
   private viewChecked = false;
+
+  constructor(private domSanitizer: DomSanitizer) {}
 
   ngOnInit() {
     this.range = this.max - this.min;
@@ -52,6 +57,18 @@ export class DigitalGaugeComponent implements OnInit, OnChanges, AfterViewInit {
     this.setThresholds();
     this.setInitialState();
     this.viewChecked = true;
+  }
+
+  get gradientUnderlineColor() {
+    return this.domSanitizer.bypassSecurityTrustStyle(`stop-color:${this.underlineColor}`);
+  }
+
+  get gradientOuterColor() {
+    return this.domSanitizer.bypassSecurityTrustStyle(`stop-color:${this.outerBackgroundColor}`);
+  }
+
+  get gradientInnerColor() {
+    return this.domSanitizer.bypassSecurityTrustStyle(`stop-color:${this.backgroundColor}`);
   }
 
   setThresholds() {

@@ -8,6 +8,8 @@
     [fontColor]="style.fontColor"
     [unitColor]="style.unitColor"
     [backgroundColor]="style.backgroundColor"
+    [outerBackgroundColor]="style.outerBackgroundColor"
+    [underlineColor]="style.underlineColor"
     [normalColor]="style.normalColor"
     [warnColor]="style.warnColor"
     [dangerColor]="style.dangerColor"
@@ -41,6 +43,9 @@
             <mat-form-field color="accent">
               <input matInput placeholder="backgroundColor" autocomplete="off" formControlName="backgroundColor">
             </mat-form-field>
+            <mat-form-field color="accent">
+              <input matInput placeholder="outerBackgroundColor" autocomplete="off" formControlName="outerBackgroundColor">
+            </mat-form-field>
           </mat-tab>
           <mat-tab label="Font and thresholds">
             <mat-form-field color="accent">
@@ -48,6 +53,9 @@
             </mat-form-field>
             <mat-form-field color="accent">
               <input matInput placeholder="unitColor" autocomplete="off" formControlName="unitColor">
+            </mat-form-field>
+            <mat-form-field color="accent">
+              <input matInput placeholder="underlineColor" autocomplete="off" formControlName="underlineColor">
             </mat-form-field>
             <mat-form-field color="accent">
               <input matInput placeholder="warnThreshold" autocomplete="off" formControlName="warnThreshold">
@@ -92,6 +100,8 @@
   fontColor="{{style.fontColor}}"
   unitColor="{{style.unitColor}}"
   backgroundColor="{{style.backgroundColor}}"
+  outerBackgroundColor="{{style.outerBackgroundColor}}"
+  underlineColor="{{style.underlineColor}}"
   normalColor="{{style.normalColor}}"
   warnColor="{{style.warnColor}}"
   dangerColor="{{style.dangerColor}}"

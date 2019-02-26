@@ -22,6 +22,8 @@ export class DigitalGaugeDemoComponent implements OnInit {
       fontColor: new FormControl(styles[0].fontColor),
       unitColor: new FormControl(styles[0].unitColor),
       backgroundColor: new FormControl(styles[0].backgroundColor),
+      outerBackgroundColor: new FormControl(styles[0].outerBackgroundColor),
+      underlineColor: new FormControl(styles[0].underlineColor),
       normalColor: new FormControl(styles[0].normalColor),
       warnColor: new FormControl(styles[0].warnColor),
       dangerColor: new FormControl(styles[0].dangerColor),
