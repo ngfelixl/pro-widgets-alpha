@@ -5,7 +5,9 @@ install:
  - npm install
 script:
  - npm run build
+ - npm run build:widgets
  - npm run test
+ - npm run test:widgets
 
  # Send coverage data to Coveralls
 after_script: npm run coverage

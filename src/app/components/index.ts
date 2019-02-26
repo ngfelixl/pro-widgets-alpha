@@ -8,6 +8,7 @@ import { ContributingComponent } from './contributing/contributing.component';
 import { NavListComponent } from './nav-list/nav-list.component';
 import { TitlebarComponent } from './titlebar/titlebar.component';
 import { FooterComponent } from './footer/footer.component';
+import { DigitalGaugeDemoComponent } from './digital-gauge-demo/digital-gauge-demo.component';
 
 export const components: any[] = [
   AnalogStickDemoComponent,
@@ -19,5 +20,6 @@ export const components: any[] = [
   ContributingComponent,
   NavListComponent,
   TitlebarComponent,
-  FooterComponent
+  FooterComponent,
+  DigitalGaugeDemoComponent
 ];

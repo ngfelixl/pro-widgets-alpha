@@ -4,6 +4,14 @@ See the [documentation](https://ngfelixl.github.io/pro-widgets)
 
 <img src="../../img/demo.PNG" alt="Widgets" width="400px">
 
+Currently available widgets:
+
+- Gauge
+- Digital Gauge
+- Analog Stick
+
+more widgets coming soon. Widget ideas welcome.
+
 ## Installation 
 
 ```

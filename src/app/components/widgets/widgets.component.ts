@@ -20,4 +20,8 @@ export class WidgetsComponent {
   get disableClose() {
     return this.layoutService.disableClose$;
   }
+
+  backdropClick(event) {
+    this.layoutService.closeSidenav();
+  }
 }

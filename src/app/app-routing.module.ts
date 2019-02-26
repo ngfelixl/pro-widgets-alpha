@@ -8,12 +8,14 @@ import { WidgetsComponent } from './components/widgets/widgets.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { InstallationComponent } from './components/installation/installation.component';
 import { ContributingComponent } from './components/contributing/contributing.component';
+import { DigitalGaugeDemoComponent } from './components/digital-gauge-demo/digital-gauge-demo.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'widgets', component: WidgetsComponent, children: [
     { path: 'installation', component: InstallationComponent, data: { subtitle: 'Installation' } },
     { path: 'gauge', component: GaugeDemoComponent, data: { subtitle: 'Gauge' } },
+    { path: 'digital-gauge', component: DigitalGaugeDemoComponent, data: { subtitle: 'Digital Gauge' } },
     { path: 'analog-stick', component: AnalogStickDemoComponent, data: { subtitle: 'Analog Stick' } },
     { path: 'contributing', component: ContributingComponent, data: { subtitle: 'Contributing' } },
   ] },
