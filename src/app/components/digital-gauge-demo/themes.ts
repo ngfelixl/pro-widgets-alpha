@@ -12,7 +12,8 @@ export const styles = [
     warnColor: 'white',
     dangerColor: 'white',
     warnThreshold: 110,
-    dangerThreshold: 110
+    dangerThreshold: 110,
+    strokeWidth: 2
   },
   {
     name: 'No background',
@@ -27,7 +28,24 @@ export const styles = [
     warnColor: 'orange',
     dangerColor: 'red',
     warnThreshold: 60,
-    dangerThreshold: 80
+    dangerThreshold: 80,
+    strokeWidth: 2
+  },
+  {
+    name: 'Full stroke',
+    min: 0,
+    max: 100,
+    unit: '°C',
+    defaultColor: 'white',
+    backgroundColor: '#424242',
+    fontColor: '#d0d0d0',
+    unitColor: '#a0a0a0',
+    normalColor: 'red',
+    warnColor: 'white',
+    dangerColor: 'white',
+    warnThreshold: 110,
+    dangerThreshold: 110,
+    strokeWidth: 12
   },
   {
     name: 'Green Accent',
@@ -42,6 +60,7 @@ export const styles = [
     warnColor: '#66ff22',
     dangerColor: '#66ff22',
     warnThreshold: 100,
-    dangerThreshold: 100
+    dangerThreshold: 100,
+    strokeWidth: 2
   }
 ];

@@ -27,6 +27,7 @@ export class DigitalGaugeDemoComponent implements OnInit {
       dangerColor: new FormControl(styles[0].dangerColor),
       warnThreshold: new FormControl(styles[0].warnThreshold),
       dangerThreshold: new FormControl(styles[0].dangerThreshold),
+      strokeWidth: new FormControl(styles[0].strokeWidth)
     });
   }
 

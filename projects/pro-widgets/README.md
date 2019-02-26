@@ -2,7 +2,7 @@
 
 See the [documentation](https://ngfelixl.github.io/pro-widgets)
 
-<img src="../../img/demo.PNG" alt="Widgets" width="400px">
+<img src="https://github.com/ngfelixl/pro-widgets/blob/master/img/demo.PNG?raw=true" alt="Widgets" width="400px">
 
 Currently available widgets:
 
