@@ -18,5 +18,15 @@ export const styles = [
     sideColor: '#eeeeee',
     yLabel: 'Left stick y',
     xLabel: 'Left stick x'
+  },
+  {
+    name: 'Green Accent',
+    color: '#66ff22',
+    gradientStartColor: '#121212',
+    gradientEndColor: 'black',
+    gradientBaseColor: '#66ff22',
+    sideColor: '#202020',
+    yLabel: 'Left stick y',
+    xLabel: 'Left stick x'
   }
 ];
