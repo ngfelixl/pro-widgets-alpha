@@ -1,5 +1,5 @@
 import { Injectable, AfterViewInit } from '@angular/core';
-import { fromEvent, Observable, Subject, BehaviorSubject } from 'rxjs';
+import { fromEvent, Observable, BehaviorSubject } from 'rxjs';
 import { map, startWith, tap, distinctUntilChanged } from 'rxjs/operators';
 
 @Injectable({
