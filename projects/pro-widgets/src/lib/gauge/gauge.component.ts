@@ -4,7 +4,6 @@ import { DomSanitizer } from '@angular/platform-browser';
 @Component({
   selector: 'pro-gauge',
   templateUrl: `./gauge.component.html`,
-  styles: [ './gauge.component.css' ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class GaugeComponent implements OnChanges, OnDestroy {
@@ -19,20 +18,21 @@ export class GaugeComponent implements OnChanges, OnDestroy {
   @Input() pointerColor = '#E52420';
   @Input() stripeColor = 'white';
   private actualValue = this.min;
-  private range = this.max - this.min;
-  private interval;
+  private interval: number;
 
   constructor(
-    private changeDetectorRef: ChangeDetectorRef,
+    public changeDetectorRef: ChangeDetectorRef,
     private domSanitizer: DomSanitizer
   ) {}
   private rangeOfCircle = 225 / 360 * Math.PI * 2;
   private offset = (157.5 / 360) * Math.PI * 2;
   private center = [141.732, 141.732];
 
-  ngOnChanges() {
-    this.range = this.max - this.min;
+  get range() {
+    return this.max - this.min;
+  }
 
+  ngOnChanges() {
     if (this.interval) {
       clearInterval(this.interval);
     }
@@ -43,7 +43,7 @@ export class GaugeComponent implements OnChanges, OnDestroy {
     this.actualValue += stepSize;
     let index = 1;
 
-    this.interval = setInterval(() => {
+    this.interval = window.setInterval(() => {
       this.actualValue += stepSize;
       this.changeDetectorRef.detectChanges();
       index++;

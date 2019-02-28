@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Input, ChangeDetectorRef } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
@@ -17,11 +17,13 @@ export class AnalogStickComponent {
   @Input() value: [number, number] = [50, 50];
   @Input() min: [number, number] = [0, 0];
   @Input() max: [number, number] = [100, 100];
-
-  constructor(private domSanitizer: DomSanitizer) {}
-
   private xOffset = 0.1 * 283.46;
   private size = [283.46 - 0.1 * 283.46, 283.46 - 0.1 * 283.46];
+
+  constructor(
+    public changeDetectorRef: ChangeDetectorRef,
+    private domSanitizer: DomSanitizer
+  ) {}
 
   get xPercentage() {
     return this.value[0] / this.max[0];

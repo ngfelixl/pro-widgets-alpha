@@ -1,4 +1,7 @@
-<mat-sidenav-container class="container" (backdropClick)="backdropClick($event)">
+
+
+
+<mat-sidenav-container *ngIf="!(hideSidenav$ | async); else hiddenSidenav" class="container" (backdropClick)="backdropClick($event)">
   <mat-sidenav
     [mode]="sidenavMode | async"
     [opened]="(sidenavOpen | async) || (disableClose | async)"
@@ -10,3 +13,7 @@
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
+
+<ng-template #hiddenSidenav>
+  <router-outlet></router-outlet>
+</ng-template>
