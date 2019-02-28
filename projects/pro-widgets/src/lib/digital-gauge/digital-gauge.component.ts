@@ -78,10 +78,12 @@ export class DigitalGaugeComponent implements OnChanges, AfterViewInit {
   setThresholds() {
     const warnPercentage = (this.warnThreshold - this.min) / this.range;
     const dangerPercentage = (this.dangerThreshold - this.min) / this.range;
-    this.thresholds = {
-      warn: Math.round((this.stripes.length) * warnPercentage),
-      danger: Math.round((this.stripes.length) * dangerPercentage)
-    };
+    if (this.stripes) {
+      this.thresholds = {
+        warn: Math.round((this.stripes.length) * warnPercentage),
+        danger: Math.round((this.stripes.length) * dangerPercentage)
+      };
+    }
   }
 
   /**
@@ -131,19 +133,22 @@ export class DigitalGaugeComponent implements OnChanges, AfterViewInit {
   }
 
   private setInitialState() {
-    const percentage = (this.value - this.min) / this.range;
-    let value = Math.ceil((this.stripes.length) * percentage);
-    value = Math.max(0, value);
-    value = Math.min(this.stripes.length - 1, value);
+    if (this.stripes) {
+      const percentage = (this.value - this.min) / this.range;
+      let value = Math.ceil((this.stripes.length) * percentage);
+      value = Math.max(0, value);
+      value = Math.min(this.stripes.length - 1, value);
 
-    for (let i = 0; i < this.stripes.length; i++) {
-      const index = this.stripes.length - 1 - i;
-      if (i < value) {
-        this.setActiveStrokeColor(i);
-      } else {
-        this.stripes[index].setAttribute('stroke', this.defaultColor);
+      for (let i = 0; i < this.stripes.length; i++) {
+        const index = this.stripes.length - 1 - i;
+        if (i < value) {
+          this.setActiveStrokeColor(i);
+        } else {
+          this.stripes[index].setAttribute('stroke', this.defaultColor);
+        }
       }
     }
+
   }
 
   get roundedValue() {
