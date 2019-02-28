@@ -1,13 +1,12 @@
-import { Component, Input, OnChanges, AfterViewInit, ViewChild, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, Input, OnChanges, AfterViewInit, ViewChild, OnInit, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'pro-digital-gauge',
   templateUrl: './digital-gauge.component.html',
-  styleUrls: [ './digital-gauge.component.css' ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class DigitalGaugeComponent implements OnInit, OnChanges, AfterViewInit {
+export class DigitalGaugeComponent implements OnChanges, AfterViewInit {
   @Input() value = 0;
   @Input() backgroundColor = '#424242';
   @Input() outerBackgroundColor = this.backgroundColor;
@@ -28,18 +27,16 @@ export class DigitalGaugeComponent implements OnInit, OnChanges, AfterViewInit {
   private stripes: HTMLElement[];
   private lastInputValue: number = this.value;
   private lastValue: number;
-  private range: number;
   private thresholds: {
     warn: number;
     danger: number;
   };
-  private viewChecked = false;
+  private viewInit = false;
 
-  constructor(private domSanitizer: DomSanitizer) {}
-
-  ngOnInit() {
-    this.range = this.max - this.min;
-  }
+  constructor(
+    public changeDetectorRef: ChangeDetectorRef,
+    private domSanitizer: DomSanitizer
+  ) {}
 
   ngOnChanges() {
     this.checkStyleChange();
@@ -48,15 +45,18 @@ export class DigitalGaugeComponent implements OnInit, OnChanges, AfterViewInit {
 
   ngAfterViewInit() {
     this.stripes = this.stripeContainer.nativeElement.getElementsByTagName('line');
-    const percentage = (this.value - this.min) / this.range;
-    let value = Math.round((this.stripes.length) * percentage);
+    let value = Math.round((this.stripes.length) * this.percentageValue);
     value = Math.max(0, value);
     value = Math.min(this.stripes.length - 1, value);
     this.lastValue = value;
 
     this.setThresholds();
     this.setInitialState();
-    this.viewChecked = true;
+    this.viewInit = true;
+  }
+
+  get range() {
+    return this.max - this.min;
   }
 
   get gradientUnderlineColor() {
@@ -69,6 +69,10 @@ export class DigitalGaugeComponent implements OnInit, OnChanges, AfterViewInit {
 
   get gradientInnerColor() {
     return this.domSanitizer.bypassSecurityTrustStyle(`stop-color:${this.backgroundColor}`);
+  }
+
+  get percentageValue() {
+    return (this.value - this.min) / this.range;
   }
 
   setThresholds() {
@@ -93,9 +97,8 @@ export class DigitalGaugeComponent implements OnInit, OnChanges, AfterViewInit {
   }
 
   private setStateChange() {
-    if (this.viewChecked) {
-      const percentage = (this.value - this.min) / this.range;
-      let value = Math.round((this.stripes.length) * percentage);
+    if (this.viewInit) {
+      let value = Math.round((this.stripes.length) * this.percentageValue);
       value = Math.max(0, value);
       value = Math.min(this.stripes.length - 1, value);
 

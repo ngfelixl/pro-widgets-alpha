@@ -6,13 +6,18 @@ import { filter, map } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
-export class TitleService {
+export class RouteDataService {
   title$: Observable<string>;
+  hideSidenav$: Observable<boolean>;
 
   constructor(private router: Router, private route: ActivatedRoute) {
     this.title$ = this.router.events.pipe(
       filter(event => event instanceof NavigationEnd),
-      map(() => this.route.firstChild.firstChild && this.route.firstChild.firstChild.snapshot.data.subtitle)
+      map(() => this.route.firstChild && this.route.firstChild.snapshot.data.subtitle)
+    );
+    this.hideSidenav$ = this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd),
+      map(() => this.route.firstChild && this.route.firstChild.snapshot.data.hideSidenav)
     );
   }
 }

@@ -1,8 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { TitleService } from './services/title.service';
+import { RouteDataService } from './services/route-data.service';
 import { LayoutService } from './services/layout.service';
-import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
@@ -15,7 +14,7 @@ export class AppComponent implements OnInit, OnDestroy {
   subscription: Subscription;
 
   constructor(
-    private titleService: TitleService,
+    private titleService: RouteDataService,
     private layoutService: LayoutService
   ) { }
 
