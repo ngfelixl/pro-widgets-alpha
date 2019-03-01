@@ -7,6 +7,9 @@ import { Component } from '@angular/core';
 @Component({ selector: 'mat-toolbar', template: '' })
 class ToolbarComponent {}
 
+@Component({selector: 'mat-icon', template: ''})
+class MatIcon {}
+
 describe('TitlebarComponent', () => {
   let component: TitlebarComponent;
   let fixture: ComponentFixture<TitlebarComponent>;
@@ -15,7 +18,8 @@ describe('TitlebarComponent', () => {
     TestBed.configureTestingModule({
       declarations: [
         TitlebarComponent,
-        ToolbarComponent
+        ToolbarComponent,
+        MatIcon
       ]
     })
     .compileComponents();

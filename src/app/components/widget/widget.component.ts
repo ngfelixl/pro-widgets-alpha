@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy, ComponentFactoryResolver,
   ViewChild, ViewContainerRef, ComponentRef } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription, Observable, Observer } from 'rxjs';
 import { map, debounceTime } from 'rxjs/operators';
 
@@ -33,31 +33,36 @@ export class WidgetComponent implements OnInit, OnDestroy {
   constructor(
     private route: ActivatedRoute,
     private dynamicForms: DynamicFormsService,
-    private componentFactoryResolver: ComponentFactoryResolver
+    private componentFactoryResolver: ComponentFactoryResolver,
+    private router: Router
   ) {
     this.routerSubscription = this.route.params.pipe(map(p => p.id)).subscribe(id => {
       this.destroySubscriptions();
 
       this.id = id;
       this.widget = widgets[id];
-      this.themes = themes[id];
-      this.form = this.createForm(this.widget.tabs);
-      this.form.patchValue(this.themes[0]);
-      this.loadComponent();
-
-      this.formSubscription = this.form.valueChanges.pipe(debounceTime(100)).subscribe(() => {
-        this.applyStyles();
-      });
-
-      this.value$ = this.valueGenerator;
-
-      this.valueSubscription = this.value$.subscribe((data: number | number[]) => {
-        this.componentRef.instance.value = data;
-        if (this.componentRef.instance.ngOnChanges) {
-          this.componentRef.instance.ngOnChanges();
-        }
-        this.componentRef.instance.changeDetectorRef.detectChanges();
-      });
+      if (this.widget) {
+        this.themes = themes[id];
+        this.form = this.createForm(this.widget.tabs);
+        this.form.patchValue(this.themes[0]);
+        this.loadComponent();
+  
+        this.formSubscription = this.form.valueChanges.pipe(debounceTime(100)).subscribe(() => {
+          this.applyStyles();
+        });
+  
+        this.value$ = this.valueGenerator;
+  
+        this.valueSubscription = this.value$.subscribe((data: number | number[]) => {
+          this.componentRef.instance.value = data;
+          if (this.componentRef.instance.ngOnChanges) {
+            this.componentRef.instance.ngOnChanges();
+          }
+          this.componentRef.instance.changeDetectorRef.detectChanges();
+        });
+      } else {
+        this.router.navigate(['/page-not-found']);
+      }
     });
   }
 
