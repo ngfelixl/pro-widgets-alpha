@@ -1,5 +1,6 @@
 # Angular Pro Widgets
 
+This is currently in an early stage. Expect breaking changes.
 See the [documentation](https://ngfelixl.github.io/pro-widgets)
 
 <img src="https://github.com/ngfelixl/pro-widgets/blob/master/img/demo.PNG?raw=true" alt="Widgets" width="400px">

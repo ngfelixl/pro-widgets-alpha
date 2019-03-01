@@ -19,18 +19,6 @@
       "dom"
     ],
     "paths": {
-      "widgets": [
-        "dist/widgets"
-      ],
-      "widgets/*": [
-        "dist/widgets/*"
-      ],
-      "pro-widget": [
-        "dist/pro-widget"
-      ],
-      "pro-widget/*": [
-        "dist/pro-widget/*"
-      ],
       "pro-widgets": [
         "dist/pro-widgets"
       ],

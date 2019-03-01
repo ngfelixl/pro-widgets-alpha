@@ -1,4 +1,4 @@
-import { Injectable, AfterViewInit } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { fromEvent, Observable, BehaviorSubject } from 'rxjs';
 import { map, startWith, tap, distinctUntilChanged } from 'rxjs/operators';
 
@@ -16,7 +16,7 @@ export class LayoutService {
       map((event) => window.innerWidth > this.threshold ? 'side' : 'over'),
       distinctUntilChanged(),
       startWith(window.innerWidth > this.threshold ? 'side' : 'over'),
-      tap(mode => {
+      tap((mode: string) => {
         switch (mode) {
           case 'over': this.sidenavOpen$.next(false); this.disableClose$.next(false); break;
           default: this.sidenavOpen$.next(true); this.disableClose$.next(true); break;

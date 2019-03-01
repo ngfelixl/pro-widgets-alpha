@@ -15,6 +15,8 @@ import { environment } from '../environments/environment';
 import { widgets } from './data/widgets/index';
 import { WidgetHostDirective } from './directive/widget-host.directive';
 
+console.log(Object.values(widgets).map(widget => widget.component));
+
 @NgModule({
   declarations: [
     AppComponent,
