@@ -1,7 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { ProModule } from 'pro-widgets';
+import {
+  ProModule,
+  GaugeComponent,
+  DigitalGaugeComponent,
+  AnalogStickComponent
+} from 'pro-widgets';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -11,11 +16,7 @@ import { components } from './components';
 import { MatModule } from './mat.module';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
-
-import { widgets } from './data/widgets/index';
 import { WidgetHostDirective } from './directive/widget-host.directive';
-
-const widgetComponents = Object.values(widgets).map(widget => widget.component);
 
 @NgModule({
   declarations: [
@@ -35,7 +36,9 @@ const widgetComponents = Object.values(widgets).map(widget => widget.component);
   providers: [],
   bootstrap: [AppComponent],
   entryComponents: [
-    widgetComponents
+    GaugeComponent,
+    DigitalGaugeComponent,
+    AnalogStickComponent
   ]
 })
 export class AppModule {}
