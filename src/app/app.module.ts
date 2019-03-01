@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { ProModule } from 'pro-widgets';
+import { ProModule, GaugeComponent } from 'pro-widgets';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -35,7 +35,7 @@ console.log(Object.values(widgets).map(widget => widget.component));
   providers: [],
   bootstrap: [AppComponent],
   entryComponents: [
-    Object.values(widgets).map(widget => widget.component)
+    GaugeComponent
   ]
 })
 export class AppModule {}
