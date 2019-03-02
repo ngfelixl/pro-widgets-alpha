@@ -38,6 +38,7 @@ export class WidgetComponent implements OnInit, OnDestroy {
   ) {
     this.routerSubscription = this.route.params.pipe(map(p => p.id)).subscribe(id => {
       this.destroySubscriptions();
+      this.form = new FormGroup({});
 
       this.id = id;
       this.widget = widgets[id];
@@ -61,7 +62,7 @@ export class WidgetComponent implements OnInit, OnDestroy {
           this.componentRef.instance.changeDetectorRef.detectChanges();
         });
       } else {
-        this.router.navigate(['/page-not-found']);
+        this.router.navigate(['page-not-found']);
       }
     });
   }
@@ -79,7 +80,16 @@ export class WidgetComponent implements OnInit, OnDestroy {
     return this.dynamicForms.createFromList(flattedFields);
   }
 
+  /**
+   * Resolves the component factory, creates a
+   * component reference and stores it in
+   * the componentRef member.
+   */
   private loadComponent() {
+    if (!this.widget) {
+      return;
+    }
+
     const componentFactory = this.componentFactoryResolver.resolveComponentFactory(this.widget.component);
     if (this.viewContainerRef) {
       this.viewContainerRef.clear();
@@ -113,14 +123,21 @@ export class WidgetComponent implements OnInit, OnDestroy {
   /**
    * Generates the input binding code which gets displayed in the
    * 'code' section.
+   * 
+   * Example output
+   * 
+   * ```typescript
+   * min="0"
+   * max="100"
+   * color="red"
+   * ```
    */
   get codeFromForm() {
-    let code = '';
-    for (const entry of Object.entries(this.form.value)) {
-      code += `
-  ${entry[0]}="${entry[1]}"`;
-    }
-    return code;
+    return Object.entries(this.form.getRawValue())
+        .reduce((acc, cur) => {
+          return `${acc}
+  ${cur[0]}="${cur[1]}"`;
+        }, '');
   }
 
   private applyStyles() {

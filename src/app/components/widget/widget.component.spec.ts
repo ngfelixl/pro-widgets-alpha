@@ -1,12 +1,13 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { WidgetComponent } from './widget.component';
-import { Directive, Component, Input, ViewContainerRef } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
-import { RouterTestingModule } from '@angular/router/testing';
+import { Directive, Component, Input } from '@angular/core';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { RouterTestingModule, setupTestingRouter } from '@angular/router/testing';
+import { WidgetHostDirective } from 'src/app/directive/widget-host.directive';
+import { By } from '@angular/platform-browser';
+import { Router } from '@angular/router';
 
-@Directive({selector: 'appWidgetHost'})
-class AppWidgetHost {constructor(public viewContainerRef: ViewContainerRef) {}}
 
 @Directive({selector: 'matInput'})
 class MatInput {}
@@ -26,25 +27,39 @@ class MatTabGroup {}
 @Component({selector: 'mat-tab', template: '<ng-content></ng-content>'})
 class MatTab {@Input() label: string;}
 
+@Component({selector: 'page-not-found', template: '<span id="page-not-found"></span>'})
+class PageNotFound {}
+
+let router = {
+  navigate: jasmine.createSpy('navigate')
+}
+
 describe('WidgetComponent', () => {
   let component: WidgetComponent;
   let fixture: ComponentFixture<WidgetComponent>;
+  let router: Router;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
         WidgetComponent,
-        AppWidgetHost,
         MatInput,
         MatFormField,
         MatSelect,
         MatOption,
         MatTabGroup,
-        MatTab
+        MatTab,
+        PageNotFound,
+        WidgetHostDirective
       ],
-      imports: [ ReactiveFormsModule, RouterTestingModule ],
+      imports: [
+        FormsModule,
+        ReactiveFormsModule,
+        RouterTestingModule.withRoutes([{path: 'page-not-found', component: PageNotFound}])
+      ]
     })
     .compileComponents();
+    router = TestBed.get(Router);
   }));
 
   beforeEach(() => {
@@ -55,5 +70,12 @@ describe('WidgetComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should redirect to the page-not-found route when no widget was found', () => {
+    // let navigateSpy = spyOn(router.routerState.snapshot.url, 'navigate');
+    // router.navigate(['page-not-found']);
+    // fixture.detectChanges();
+    // expect(router.routerState.snapshot.toString()).toContain('page-not-found');
   });
 });

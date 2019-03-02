@@ -12,7 +12,8 @@ const routes: Routes = [
   { path: 'installation', component: InstallationComponent, data: { subtitle: 'Installation' } },
   { path: 'contributing', component: ContributingComponent, data: { subtitle: 'Contributing' } },
   { path: 'widgets/:id', component: WidgetComponent, data: { subtitle: 'Customizer' } },
-  { path: '**', component: PageNotFoundComponent }
+  { path: 'page-not-found', component: PageNotFoundComponent },
+  { path: '**', redirectTo: '/page-not-found' }
 ];
 
 @NgModule({

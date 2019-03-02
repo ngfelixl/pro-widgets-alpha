@@ -6,6 +6,10 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class DynamicFormsService {
   createFromList(list: string[]): FormGroup {
+    if (!(list instanceof Array)) {
+      throw new Error('DynamicFormsService: create form from list requires an array of strings');
+    }
+
     const form = new FormGroup({});
 
     for (const field of list) {

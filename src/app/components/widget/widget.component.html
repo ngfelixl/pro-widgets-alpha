@@ -7,7 +7,7 @@
       <b>{{widget?.name}} input bindings</b><br>
       value: {{value$ | async | json}}<br><br>
       <mat-form-field color="accent">
-        <mat-select placeholder="Theme" [value]="themes[0]" (selectionChange)="usePreset($event.value)">
+        <mat-select placeholder="Theme" [value]="themes && themes[0]" (selectionChange)="usePreset($event.value)">
           <mat-option *ngFor="let theme of themes" [value]="theme">{{theme.name}}</mat-option>
         </mat-select>
       </mat-form-field>
