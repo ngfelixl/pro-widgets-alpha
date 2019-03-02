@@ -5,6 +5,29 @@
   If there are more then me contributing to this lib, I consider creating a contributors section.
 </p>
 
+<h3>Developer Guidelines</h3>
+
+If you want to create a new widget create a feature request first. If it is
+a widget request:
+
+<ol>
+  <li>Create the widget in the <b>/projects/pro-widgets/src/lib/WIDGETID</b></li>
+  <li>The widget has to be a component containing the SVG in the template</li>
+  <li>Create a module for the widget which declares and exports the component</li>
+  <li>Get inspirations about data-bindings from the existing widgets</li>
+  <li>Create meaningful unit tests (some are missing for existing components yet)</li>
+  <li>Export the widget module in the <b>./pro.module.ts</b></li>
+  <li>Export the component and the module in the <b>public_api.ts</b></li>
+</ol>
+
+Creating docs for the widget:
+
+<ol>
+  <li>run <b>run npm build:widgets</b></li>
+  <li>Create an entry in the <b>./src/app/data/widgets/</b> folder (orientate on existing ones)</li>
+  <li>Create at least one theme for your widget in <b>./src/app/data/themes</b></li>
+</ol>
+
 <h2>Sponsoring</h2>
 
 <p>
