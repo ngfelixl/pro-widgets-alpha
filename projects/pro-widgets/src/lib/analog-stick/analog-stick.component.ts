@@ -26,11 +26,11 @@ export class AnalogStickComponent {
   ) {}
 
   get xPercentage() {
-    return this.value[0] / this.max[0];
+    return (this.value[0] - this.min[0]) / this.max[0];
   }
 
   get yPercentage() {
-    return this.value[1] / this.max[1];
+    return (this.value[1] - this.min[0]) / this.max[1];
   }
 
   get gradientColor() {

@@ -8,6 +8,7 @@
     "build:widgets": "ng build pro-widgets",
     "test": "ng test",
     "test:widgets": "ng test pro-widgets",
+    "coverage": "cat coverage/pro-widgets/lcov.info | coveralls",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },

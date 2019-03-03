@@ -98,7 +98,8 @@
               "src/favicon.ico",
               "src/assets",
               "src/manifest.json"
-            ]
+            ],
+            "codeCoverage": true
           }
         },
         "lint": {
@@ -161,7 +162,8 @@
           "options": {
             "main": "projects/pro-widgets/src/test.ts",
             "tsConfig": "projects/pro-widgets/tsconfig.spec.json",
-            "karmaConfig": "projects/pro-widgets/karma.conf.js"
+            "karmaConfig": "projects/pro-widgets/karma.conf.js",
+            "codeCoverage": true
           }
         },
         "lint": {
