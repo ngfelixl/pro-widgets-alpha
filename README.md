@@ -1,5 +1,7 @@
 # Pro-Widgets
 
+[![Build Status](https://travis-ci.com/ngfelixl/pro-widgets.svg?branch=master)](https://travis-ci.com/ngfelixl/pro-widgets)
+
 Responsive and animated SVG widgets for Angular.
 
 See the projects [website](https://ngfelixl.github.io/pro-widgets) to get your hands on this repository

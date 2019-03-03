@@ -1,5 +1,7 @@
 # Angular Pro Widgets
 
+[![Build Status](https://travis-ci.com/ngfelixl/pro-widgets.svg?branch=master)](https://travis-ci.com/ngfelixl/pro-widgets)
+
 This library provides animated and highly customizable
 SVG widgets for use with IoT or other data visualization
 tasks. It has an easy to use interface as you will see in
