@@ -1,6 +1,7 @@
 # Pro-Widgets
 
 [![Build Status](https://travis-ci.com/ngfelixl/pro-widgets.svg?branch=master)](https://travis-ci.com/ngfelixl/pro-widgets)
+[![npm](https://img.shields.io/npm/v/pro-widgets.svg)](https://npmjs.com/package/pro-widgets)
 
 Responsive and animated SVG widgets for Angular.
 
