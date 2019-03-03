@@ -36,9 +36,9 @@
 			<stop  offset="1" [style]="gradientColor"/>
 		</linearGradient>
 		<line stroke="url(#prostickgradient4)" stroke-width="2" stroke-miterlimit="10" x1="155.906" y1="127.559" [attr.x2]="xPosition" [attr.y2]="yPosition"/>
-		<circle [attr.fill]="color" [attr.cx]="xPosition" [attr.cy]="yPosition" r="2.834"/>
-		<line fill="none" [attr.stroke]="gradientBaseColor" stroke-width="2" stroke-miterlimit="10" [attr.x1]="xPosition" y1="255.118" [attr.x2]="xPosition" y2="260.787"/>
-		<line fill="none" [attr.stroke]="gradientBaseColor" stroke-width="2" stroke-miterlimit="10" x1="28.347" [attr.y1]="yPosition" x2="22.677" [attr.y2]="yPosition"/>
+		<circle id="circle-pointer" [attr.fill]="color" [attr.cx]="xPosition" [attr.cy]="yPosition" r="2.834"/>
+		<line id="x-pointer" fill="none" [attr.stroke]="gradientBaseColor" stroke-width="2" stroke-miterlimit="10" [attr.x1]="xPosition" y1="255.118" [attr.x2]="xPosition" y2="260.787"/>
+		<line id="y-pointer" fill="none" [attr.stroke]="gradientBaseColor" stroke-width="2" stroke-miterlimit="10" x1="28.347" [attr.y1]="yPosition" x2="22.677" [attr.y2]="yPosition"/>
 	</g>
 	<g id="labels">
 		<text transform="matrix(0 1 -1 0 7.2471 123)" fill="#9D9D9C" font-family="'Roboto-Regular', 'Arial'" font-size="14" text-anchor="middle">{{yLabel}}</text>
