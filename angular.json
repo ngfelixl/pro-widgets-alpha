@@ -83,23 +83,11 @@
           }
         },
         "test": {
-          "builder": "@angular-devkit/build-angular:karma",
+          "builder": "@nrwl/builders:jest",
           "options": {
-            "main": "src/test.ts",
-            "polyfills": "src/polyfills.ts",
+            "jestConfig": "jest.config.js",
             "tsConfig": "src/tsconfig.spec.json",
-            "karmaConfig": "src/karma.conf.js",
-            "styles": [
-              "./node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css",
-              "src/styles.scss"
-            ],
-            "scripts": [],
-            "assets": [
-              "src/favicon.ico",
-              "src/assets",
-              "src/manifest.json"
-            ],
-            "codeCoverage": true
+            "setupFile": "src/test-setup.ts"
           }
         },
         "lint": {
@@ -157,15 +145,14 @@
             "project": "projects/pro-widgets/ng-package.json"
           }
         },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "projects/pro-widgets/src/test.ts",
-            "tsConfig": "projects/pro-widgets/tsconfig.spec.json",
-            "karmaConfig": "projects/pro-widgets/karma.conf.js",
-            "codeCoverage": true
-          }
-        },
+				"test": {
+					"builder": "@nrwl/builders:jest",
+					"options": {
+						"jestConfig": "projects/pro-widgets/jest.config.js",
+						"tsConfig": "projects/pro-widgets/tsconfig.spec.json",
+						"setupFile": "projects/pro-widgets/src/test-setup.ts"
+					}
+				},
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {

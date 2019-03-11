@@ -36,6 +36,7 @@ export class WidgetComponent implements OnInit, OnDestroy {
     private componentFactoryResolver: ComponentFactoryResolver,
     private router: Router
   ) {
+    this.form = new FormGroup({});
     this.routerSubscription = this.route.params.pipe(map(p => p.id)).subscribe(id => {
       this.destroySubscriptions();
       this.form = new FormGroup({});
@@ -62,7 +63,7 @@ export class WidgetComponent implements OnInit, OnDestroy {
           this.componentRef.instance.changeDetectorRef.detectChanges();
         });
       } else {
-        this.router.navigate(['page-not-found']);
+        this.router.navigate(['/page-not-found']);
       }
     });
   }
