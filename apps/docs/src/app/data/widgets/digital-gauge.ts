@@ -1,5 +1,5 @@
-import { Widget } from 'src/app/models/widget';
-import { DigitalGaugeComponent } from 'pro-widgets';
+import { Widget } from '@docs/app/models/widget';
+import { DigitalGaugeComponent } from '@pro-widgets';
 
 export const digitalGauge: Widget = {
   name: 'Digital Gauge',

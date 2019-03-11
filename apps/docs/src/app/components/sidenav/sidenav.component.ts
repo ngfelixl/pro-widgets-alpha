@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { RouteDataService } from 'src/app/services/route-data.service';
 import { Observable } from 'rxjs';
-import { LayoutService } from 'src/app/services/layout.service';
+import { LayoutService } from '@docs/app/services/layout.service';
+import { RouteDataService } from '@docs/app/services/route-data.service';
 
 @Component({
   selector: 'app-sidenav',

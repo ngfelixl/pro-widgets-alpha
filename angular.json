@@ -1,11 +1,11 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
-  "newProjectRoot": "projects",
+  "newProjectRoot": "",
   "projects": {
     "docs": {
-      "root": "",
-      "sourceRoot": "src",
+      "root": "apps/docs",
+      "sourceRoot": "apps/docs/src",
       "projectType": "application",
       "prefix": "app",
       "schematics": {
@@ -17,19 +17,19 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "docs",
-            "index": "src/index.html",
-            "main": "src/main.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "src/tsconfig.app.json",
+            "outputPath": "dist/apps/docs",
+            "index": "apps/docs/src/index.html",
+            "main": "apps/docs/src/main.ts",
+            "polyfills": "apps/docs/src/polyfills.ts",
+            "tsConfig": "apps/docs/tsconfig.app.json",
             "assets": [
-              "src/favicon.ico",
-              "src/assets",
-              "src/manifest.json"
+              "apps/docs/src/favicon.ico",
+              "apps/docs/src/assets",
+              "apps/docs/src/manifest.json"
             ],
             "styles": [
-              "src/theme.scss",
-              "src/styles.scss"
+              "apps/docs/src/theme.scss",
+              "apps/docs/src/styles.scss"
             ],
             "scripts": [],
             "es5BrowserSupport": true
@@ -38,8 +38,8 @@
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
+                  "replace": "apps/docs/src/environments/environment.ts",
+                  "with": "apps/docs/src/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -59,7 +59,7 @@
                 }
               ],
               "serviceWorker": true,
-              "ngswConfigPath": "src/ngsw-config.json",
+              "ngswConfigPath": "apps/docs/src/ngsw-config.json",
               "baseHref": "./",
               "deployUrl": "https://ngfelixl.github.io/pro-widgets/"
             }
@@ -86,16 +86,16 @@
           "builder": "@nrwl/builders:jest",
           "options": {
             "jestConfig": "jest.config.js",
-            "tsConfig": "src/tsconfig.spec.json",
-            "setupFile": "src/test-setup.ts"
+            "tsConfig": "apps/docs/src/tsconfig.spec.json",
+            "setupFile": "apps/docs/src/test-setup.ts"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "src/tsconfig.app.json",
-              "src/tsconfig.spec.json"
+              "apps/docs/tsconfig.app.json",
+              "apps/docs/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -105,14 +105,15 @@
       }
     },
     "docs-e2e": {
-      "root": "e2e/",
+      "root": "apps/docs-e2e/",
+      "sourceRoot": "apps/docs-e2d/src",
       "projectType": "application",
       "prefix": "",
       "architect": {
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
-            "protractorConfig": "e2e/protractor.conf.js",
+            "protractorConfig": "apps/docs-e2e/protractor.conf.js",
             "devServerTarget": "docs:serve"
           },
           "configurations": {
@@ -133,32 +134,32 @@
       }
     },
     "pro-widgets": {
-      "root": "projects/pro-widgets",
-      "sourceRoot": "projects/pro-widgets/src",
+      "root": "libs/pro-widgets",
+      "sourceRoot": "libs/pro-widgets/src",
       "projectType": "library",
-      "prefix": "lib",
+      "prefix": "pro",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
           "options": {
-            "tsConfig": "projects/pro-widgets/tsconfig.lib.json",
-            "project": "projects/pro-widgets/ng-package.json"
+            "tsConfig": "libs/pro-widgets/tsconfig.lib.json",
+            "project": "libs/pro-widgets/ng-package.json"
           }
         },
 				"test": {
 					"builder": "@nrwl/builders:jest",
 					"options": {
-						"jestConfig": "projects/pro-widgets/jest.config.js",
-						"tsConfig": "projects/pro-widgets/tsconfig.spec.json",
-						"setupFile": "projects/pro-widgets/src/test-setup.ts"
+						"jestConfig": "libs/pro-widgets/jest.config.js",
+						"tsConfig": "libs/pro-widgets/tsconfig.spec.json",
+						"setupFile": "libs/pro-widgets/src/test-setup.ts"
 					}
 				},
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/pro-widgets/tsconfig.lib.json",
-              "projects/pro-widgets/tsconfig.spec.json"
+              "libs/pro-widgets/tsconfig.lib.json",
+              "libs/pro-widgets/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"

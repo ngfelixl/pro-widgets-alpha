@@ -6,7 +6,7 @@ import {
   GaugeComponent,
   DigitalGaugeComponent,
   AnalogStickComponent
-} from 'pro-widgets';
+} from '@pro-widgets';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';

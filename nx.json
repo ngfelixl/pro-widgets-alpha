@@ -1,0 +1,22 @@
+{
+  "npmScope": "",
+  "projects": {
+    "docs": {
+      "tags": [
+        "documentation"
+      ]
+    },
+    "pro-widgets": {
+      "tags": [
+        "widgets"
+      ]
+    }
+  },
+  "implicitDependencies": {
+    "angular.json": "*",
+    "package.json": "*",
+    "tsconfig.json": "*",
+    "tslint.json": "*",
+    "nx.json": "*"
+  }
+}

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { fromEvent, Observable, BehaviorSubject } from 'rxjs';
-import { map, startWith, tap, distinctUntilChanged } from 'rxjs/operators';
+import { Observable, BehaviorSubject } from 'rxjs';
+import { map, tap } from 'rxjs/operators';
 import { BreakpointObserver } from '@angular/cdk/layout';
 
 @Injectable({

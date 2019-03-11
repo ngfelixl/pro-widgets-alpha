@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LayoutService } from 'src/app/services/layout.service';
+import { LayoutService } from '@docs/app/services/layout.service';
 
 import { widgets } from '../../data/widgets/index';
 

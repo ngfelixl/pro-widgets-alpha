@@ -1,5 +1,5 @@
-import { Widget } from 'src/app/models/widget';
-import { AnalogStickComponent } from 'pro-widgets';
+import { Widget } from '@docs/app/models/widget';
+import { AnalogStickComponent } from '@pro-widgets';
 
 export const analogStick: Widget = {
   name: 'Analog Stick',

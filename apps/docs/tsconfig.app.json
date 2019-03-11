@@ -1,0 +1,15 @@
+{
+	"extends": "../../tsconfig.json",
+	"compilerOptions": {
+		"outDir": "../../dist/out-tsc/apps/docs",
+		"module": "es2015"
+	},
+	"include": [
+		"**/*.ts",
+		"../../libs/pro-widgets/src/index.ts"
+	],
+	"exclude": [
+		"**/*.spec.ts",
+		//"src/test.ts"
+	]
+}
